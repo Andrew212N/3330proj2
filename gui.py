@@ -13,7 +13,7 @@ class Root(tk.Tk):
         self.title('Library Management System')
         self.geometry("400x300")
 
-        label = ttk.Label(self, text ="Startpage", font = ("Verdana", 35))
+        label = ttk.Label(self, text ="LMS", font = ("Verdana", 35))
         label.pack()
 
         chkout_button = ttk.Button(self, text = "Checkout Window", command = self.chkout_open)

@@ -36,7 +36,7 @@ class Borrower(tk.Toplevel):
     def bwr_submit(self):
         bwr_submit_conn = sqlite3.connect('lms.db')
         sub_cur = bwr_submit_conn.cursor()
-        sub_cur.execute("INSERT INTO Borrower VALUES (:name, :address, :phone)",
+        sub_cur.execute("INSERT INTO Borrower(Name, Address, Phone) VALUES (:name, :address, :phone)",
                         {
                             'name': self.bwr_name.get(),
                             'address': self.bwr_address.get(),
