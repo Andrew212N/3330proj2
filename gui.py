@@ -5,6 +5,7 @@ from tkinter import ttk
 import checkout as co
 import borrower as bo
 import pub_book as bp
+import numOfCopies as noc
 
 class Root(tk.Tk):
     def __init__(self):
@@ -25,6 +26,9 @@ class Root(tk.Tk):
         add_book_button = ttk.Button(self, text = "Add Book with Publisher", command = self.pub_bk_open)
         add_book_button.pack()
 
+        numOfCopies_button = ttk.Button(self, text = "View Number of Copies", command = self.numOfCopies_open)
+        numOfCopies_button.pack()
+
         root_close = ttk.Button(self, text = "Close System", command = self.destroy)
         root_close.pack()
 
@@ -40,6 +44,9 @@ class Root(tk.Tk):
         pub_bk = bp.PubBook(self)
         pub_bk.grab_set()
 
+    def numOfCopies_open(self):
+        checkout = noc.numOfCopies(self)
+        checkout.grab_set()
 
 if __name__ == "__main__":
     app = Root()

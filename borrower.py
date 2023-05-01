@@ -34,7 +34,7 @@ class Borrower(tk.Toplevel):
         chkout_close.grid(row = 4, column = 1)
 
     def bwr_submit(self):
-        bwr_submit_conn = sqlite3.connect('lms.db')
+        bwr_submit_conn = sqlite3.connect('./lms.db')
         sub_cur = bwr_submit_conn.cursor()
         sub_cur.execute("INSERT INTO Borrower(Name, Address, Phone) VALUES (:name, :address, :phone)",
                         {
@@ -44,3 +44,4 @@ class Borrower(tk.Toplevel):
                         })
         bwr_submit_conn.commit()
         bwr_submit_conn.close()
+        
